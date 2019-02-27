@@ -1,7 +1,7 @@
 package com.arpita.demo.creditcardws.misc;
 
+import com.arpita.demo.creditcardws.interfaces.CreditCard;
 import com.arpita.demo.creditcardws.model.CardDetails;
-import com.arpita.demo.creditcardws.model.interfaces.CreditCard;
 
 public class VisaCard implements CreditCard {
 
