@@ -1,2 +1,0 @@
-# creditcarddemo
-REST Api demo
