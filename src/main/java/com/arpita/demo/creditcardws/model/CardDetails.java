@@ -12,6 +12,9 @@ public class CardDetails {
 	private String nameOnCard;
 	//private CARD_TYPES typeOfCard;
 
+	public CardDetails() {
+	}
+
 	public CardDetails(String cardNumber, String csvNumber, String nameOnCard) {
 		super();
 		this.cardNumber = cardNumber;
@@ -19,9 +22,7 @@ public class CardDetails {
 		this.nameOnCard = nameOnCard;
 	}
 	
-	public CardDetails() {
-		
-	}
+	
 	
 
 	public String getCardNumber() {
@@ -41,6 +42,12 @@ public class CardDetails {
 	}
 	public void setNameOnCard(String nameOnCard) {
 		this.nameOnCard = nameOnCard;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Card Details: name-> " + getNameOnCard() + ", number -> " + getCardNumber() + ", csv -> " + getCsvNumber();
 	}
 
 	/*

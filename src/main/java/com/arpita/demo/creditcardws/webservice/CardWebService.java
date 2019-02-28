@@ -18,14 +18,15 @@ import com.arpita.demo.creditcardws.service.CreditCardService;
 
 @Path("/pay")
 public class CardWebService {
-	
-	
-	/* This REST API is not working/
-	 * tried the following json string in boomerang, 
-	 * bt not working. getting a 415 error.
+
+
+	/* This is the sameple JSON String to enter in postman
+	 * DONT use boomerang, somehow it was not working with POST JSON call
 	 * 
-	 * PUT + http://localhost:8080/creditcardws/webapi/pay
 	 * 
+	 * Inside postman, use POST, this URL : http://localhost:8080/creditcardws/webapi/pay
+	 * add in header: Content-Type value application/json
+	 * and finally the following json data inside raw 
 	 * {
 		   "cardNumber" : "7668768687",
 		   "csvNumber" : "886",
@@ -33,47 +34,21 @@ public class CardWebService {
 		}
 	 * 
 	 */
-	
-	@PUT
+	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void payByCreditCard(CardDetails test) {
+	public void payByCreditCard(CardDetails userCardDetails) {
 
-		System.out.println( " ----- " + test);
-		
-		//CardDetails cardDetails System.out.println(cardCompany + " -> " + cardDetails.getCardNumber());		
+		System.out.println(userCardDetails);
 	}
-	
-	
+
+
 	@GET
 	public String getDefault() {
 		return "testinggggg";
 	}
-	
-	
-	
-	/* This web service works
-	 * 
-	 * @POST
-	 * 
-	 * @Path("/cardtype")
-	 * 
-	 * @Consumes(MediaType.APPLICATION_JSON) public void
-	 * payByCreditCardHardCoded(String cardType) {
-	 * 
-	 * System.out.println( " ----- " + cardType);
-	 * 
-	 * CreditCard masterCard = new MasterCard(); CreditCard visaCard = new
-	 * VisaCard();
-	 * 
-	 * CreditCardService cardService = new CreditCardService();
-	 * cardService.payByCreditCard(masterCard, CardFactory.cardOne);
-	 * cardService.payByCreditCard(visaCard, CardFactory.cardTwo);
-	 * 
-	 * }
-	 */
-	
-	
-	
+
+
+
 	@GET
 	@Path("/cardtype")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -81,14 +56,13 @@ public class CardWebService {
 
 		CreditCard masterCard = new MasterCard();
 		CreditCard visaCard = new VisaCard();
-		
+
 		CreditCardService cardService = new CreditCardService();
 		cardService.payByCreditCard(masterCard, CardFactory.cardOne);
 		cardService.payByCreditCard(visaCard, CardFactory.cardTwo);
-		
 	}
-	
-	
-	
+
+
+
 
 }
