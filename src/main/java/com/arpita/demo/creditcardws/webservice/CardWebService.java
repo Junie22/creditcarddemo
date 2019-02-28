@@ -19,6 +19,21 @@ import com.arpita.demo.creditcardws.service.CreditCardService;
 @Path("/pay")
 public class CardWebService {
 	
+	
+	/* This REST API is not working/
+	 * tried the following json string in boomerang, 
+	 * bt not working. getting a 415 error.
+	 * 
+	 * PUT + http://localhost:8080/creditcardws/webapi/pay
+	 * 
+	 * {
+		   "cardNumber" : "7668768687",
+		   "csvNumber" : "886",
+		   "nameOnCard" : "gvjhg"
+		}
+	 * 
+	 */
+	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void payByCreditCard(CardDetails test) {
